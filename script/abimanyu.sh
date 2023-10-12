@@ -77,9 +77,32 @@ service nginx restart
 
 
 
+##### 11
+
 cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/abimanyu.it06.com.conf
 
 rm /etc/apache2/sites-available/000-default.conf
+
+echo -e '<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/abimanyu.it06
+
+  ServerName abimanyu.it06.com
+  ServerAlias www.abimanyu.it06.com
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>' > /etc/apache2/sites-available/abimanyu.it06.com.conf
+
+a2ensite abimanyu.it06.com.conf
+
+service apache2 restart
+
+
+
+
+
+##### 12
 
 echo -e '<VirtualHost *:80>
   ServerAdmin webmaster@localhost
@@ -102,9 +125,135 @@ service apache2 restart
 
 
 
+##### 13
+
+echo -e '<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/parikesit.abimanyu.it06
+  ServerName parikesit.abimanyu.it06.com
+  ServerAlias www.parikesit.abimanyu.it06.com
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>' > /etc/apache2/sites-available/parikesit.abimanyu.it06.com.conf
+
+a2ensite parikesit.abimanyu.it06.com.conf
+
+service apache2 restart
 
 
 
+
+
+
+##### 14
+
+echo -e '<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/parikesit.abimanyu.it06
+  ServerName parikesit.abimanyu.it06.com
+  ServerAlias www.parikesit.abimanyu.it06.com
+
+  <Directory /var/www/parikesit.abimanyu.it06/public>
+          Options +Indexes
+  </Directory>
+
+  <Directory /var/www/parikesit.abimanyu.it06/secret>
+          Options -Indexes
+  </Directory>
+
+  Alias "/public" "/var/www/parikesit.abimanyu.it06/public"
+  Alias "/secret" "/var/www/parikesit.abimanyu.it06/secret"
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>' > /etc/apache2/sites-available/parikesit.abimanyu.it06.com.conf
+
+service apache2 restart
+
+
+
+
+
+##### 15
+
+echo -e '<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/parikesit.abimanyu.it06
+  ServerName parikesit.abimanyu.it06.com
+  ServerAlias www.parikesit.abimanyu.it06.com
+
+  <Directory /var/www/parikesit.abimanyu.it06/public>
+          Options +Indexes
+  </Directory>
+
+  <Directory /var/www/parikesit.abimanyu.it06/secret>
+          Options -Indexes
+  </Directory>
+
+  Alias "/public" "/var/www/parikesit.abimanyu.it06/public"
+  Alias "/secret" "/var/www/parikesit.abimanyu.it06/secret"
+
+  ErrorDocument 404 /error/404.html
+  ErrorDocument 403 /error/403.html
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>' > /etc/apache2/sites-available/parikesit.abimanyu.it06.com.conf
+
+service apache2 restart
+
+
+
+
+
+##### 16
+
+echo -e '<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/parikesit.abimanyu.it06
+  ServerName parikesit.abimanyu.it06.com
+  ServerAlias www.parikesit.abimanyu.it06.com
+
+  <Directory /var/www/parikesit.abimanyu.it06/public>
+          Options +Indexes
+  </Directory>
+
+  <Directory /var/www/parikesit.abimanyu.it06/secret>
+          Options -Indexes
+  </Directory>
+
+  Alias "/public" "/var/www/parikesit.abimanyu.it06/public"
+  Alias "/secret" "/var/www/parikesit.abimanyu.it06/secret"
+  Alias "/js" "/var/www/parikesit.abimanyu.it06/public/js"
+
+  ErrorDocument 404 /error/404.html
+  ErrorDocument 403 /error/403.html
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>' > /etc/apache2/sites-available/parikesit.abimanyu.it06.com.conf
+
+service apache2 restart
+
+
+
+
+
+##### 17
+
+echo -e '<VirtualHost *:14000 *:14400>
+  ServerAdmin webmaster@localhost
+  DocumentRoot /var/www/rjp.baratayuda.abimanyu.it06
+  ServerName rjp.baratayuda.abimanyu.it06.com
+  ServerAlias www.rjp.baratayuda.abimanyu.it06.com
+
+  ErrorDocument 404 /error/404.html
+  ErrorDocument 403 /error/403.html
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>' > /etc/apache2/sites-available/rjp.baratayuda.abimanyu.it06.com.conf
 
 echo -e '# If you just change the port or add more ports here, you will likely also
 # have to change the VirtualHost statement in
@@ -132,6 +281,7 @@ service apache2 restart
 
 
 
+##### 18
 
 echo -e '<VirtualHost *:14000 *:14400>
   ServerAdmin webmaster@localhost
@@ -163,6 +313,9 @@ service apache2 restart
 
 
 
+
+##### 19
+
 echo -e '<VirtualHost *:80>
     ServerAdmin webmaster@abimanyu.it06.com
     DocumentRoot /var/www/html
@@ -180,6 +333,8 @@ service apache2 restart
 
 
 
+
+##### 20
 
 a2enmod rewrite
 
