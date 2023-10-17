@@ -1,4 +1,3 @@
-![image](https://github.com/wahyuandhikarizaldi/Jarkom-Modul-2-IT06-2023/assets/113814423/e2eb0730-6a7a-4d55-9cbe-02a80b6ee938)# Jarkom-Modul-2-IT06-2023
 **Modul 2 Jaringan Komputer 2023**
 
 ## Kelompok IT06
