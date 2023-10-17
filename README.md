@@ -848,7 +848,6 @@ lynx parikesit.abimanyu.it06.com/secret
 
 Tambahkan konfigurasi ErrorDocument pada Abimanyu.
 
-### Script
 **Abimanyu**
 ```
 echo -e '<VirtualHost *:80>
